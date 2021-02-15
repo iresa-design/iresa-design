@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./scss/variables";
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+// Import custom styles
+@import "./scss/global";
+@import "./scss/divider";
+@import "./scss/buttons";
+@import "./scss/navbar";
+@import "./scss/masthead";
+@import "./scss/portfolio";
+@import "./scss/contact";
+@import "./scss/footer";

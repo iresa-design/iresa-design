@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "iresa-design"
+  "defaultProject": "iresa-design",
+  "cli": {
+    "analytics": false
+  }
 }
