@@ -46,6 +46,9 @@ testem.log
 Thumbs.db
 
 # Scully
+scully.*.config.js
+apps/**/scully-routes.json
 scully.log
-scully
-scully/*
+scullyStats.json
+.scully
+libs/scully/.vscode/settings.json
