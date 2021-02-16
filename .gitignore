@@ -47,5 +47,5 @@ Thumbs.db
 
 # Scully
 scully.log
-.scully
-.scully/*
+scully
+scully/*
