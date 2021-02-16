@@ -6,6 +6,7 @@ export const config: ScullyConfig = {
   projectRoot: "./src",
   projectName: "iresa-design",
   outDir: './dist/static',
+  defaultPostRenderers: [baseHrefRewrite],
   routes: {
   }
 };
