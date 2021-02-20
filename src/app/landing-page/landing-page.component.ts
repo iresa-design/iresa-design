@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
-import { distinctUntilChanged, map, startWith, tap } from 'rxjs/operators';
-import { Collapse } from 'bootstrap';
+import { distinctUntilChanged, map, startWith } from 'rxjs/operators';
+import { Collapse, ScrollSpy } from 'bootstrap';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,7 +9,7 @@ import { Collapse } from 'bootstrap';
   styleUrls: ['./landing-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, AfterViewInit {
 
   @ViewChild('navCollapse') navCollapseRef!: ElementRef;
 
@@ -29,10 +29,20 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  ngAfterViewInit() {
+    this.addScrollSpy();
+  }
 
+
+  addScrollSpy() {
+    new ScrollSpy(document.body, {
+      target: '#mainNav', offset: 80
+    })
+  }
 
   navItemClick() {
-    new Collapse(this.navCollapseRef.nativeElement).toggle();
+    const show = this.navCollapseRef.nativeElement.className.includes('show');
+    show ? new Collapse(this.navCollapseRef.nativeElement).toggle() : undefined;
   }
 
 }
