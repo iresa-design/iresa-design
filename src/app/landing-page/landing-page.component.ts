@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import {Collapse} from 'bootstrap';
+import { distinctUntilChanged, map, startWith, tap } from 'rxjs/operators';
+import { Collapse } from 'bootstrap';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,31 +11,25 @@ import {Collapse} from 'bootstrap';
 })
 export class LandingPageComponent implements OnInit {
 
-  @ViewChild('mainNav') mainNavRef!: ElementRef;
   @ViewChild('navCollapse') navCollapseRef!: ElementRef;
 
-  onScroll$ = new Observable();
+  constructor() { }
 
-  constructor(private renderer: Renderer2) { }
-
-  ngOnInit(): void {
-    this.onScroll();
+  get onScroll$(): Observable<Event> {
+    return fromEvent(window, 'scroll');
   }
 
-  onScroll() {
-    this.onScroll$ = fromEvent(window, 'scroll').pipe(
-      tap(_ => this.updateEl())
-    );
+  get overOffsetTop$(): Observable<boolean> {
+    return this.onScroll$.pipe(
+      startWith(false),
+      map(_ => window.pageYOffset > 100),
+      distinctUntilChanged()
+    )
   }
 
-  updateEl() {
-    this.updateMainNav();
-  }
+  ngOnInit(): void { }
 
-  updateMainNav() {
-    const offsetTop = window.pageYOffset + this.mainNavRef.nativeElement.getBoundingClientRect().top;
-    offsetTop > 100 ? this.renderer.addClass(this.mainNavRef.nativeElement, 'navbar-shrink') : this.renderer.removeClass(this.mainNavRef.nativeElement, 'navbar-shrink');
-  }
+
 
   navItemClick() {
     new Collapse(this.navCollapseRef.nativeElement).toggle();
