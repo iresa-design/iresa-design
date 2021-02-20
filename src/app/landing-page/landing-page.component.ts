@@ -13,6 +13,8 @@ export class LandingPageComponent implements OnInit, AfterViewInit {
 
   @ViewChild('navCollapse') navCollapseRef!: ElementRef;
 
+  currYear = new Date().getFullYear();
+
   constructor() { }
 
   get onScroll$(): Observable<Event> {
