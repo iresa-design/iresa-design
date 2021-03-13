@@ -13,8 +13,10 @@
             </button>
             <div #navCollapse class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
+                    <!--li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
+                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#portfolio">Portfolio</a></li-->
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#portfolio">Portfolio</a></li>
+                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#service">Services</a></li>
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded " href="#about">About</a></li>
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
@@ -28,10 +30,14 @@
     <header class="masthead bg-primary text-white text-center">
         <app-header></app-header>
     </header>
-    <!-- Portfolio Section-->
+    <!-- Service Section-->
+    <section class="page-section featured-services" id="service">
+        <app-service></app-service>
+    </section>
+    <!-- Portfolio Section>
     <section class="page-section portfolio" id="portfolio">
         <app-portfolio></app-portfolio>
-    </section>
+    </section-->
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="about">
         <app-about></app-about>

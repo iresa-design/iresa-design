@@ -7,13 +7,14 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ServiceComponent } from './service/service.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent }
 ];
 
 @NgModule({
-  declarations: [LandingPageComponent, AboutComponent, PortfolioComponent, ContactComponent, FooterComponent, HeaderComponent],
+  declarations: [LandingPageComponent, AboutComponent, PortfolioComponent, ContactComponent, FooterComponent, HeaderComponent, ServiceComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
