@@ -13,14 +13,14 @@
             </button>
             <div #navCollapse class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <!--li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#portfolio">Portfolio</a></li-->
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded " href="#service">Services</a></li>
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded " href="#about">About</a></li>
                     <li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#contact">Contact</a></li>
+                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#portfolio">Portfolio</a></li>
+                    <!--li class="nav-item mx-0 mx-lg-1" (click)="navItemClick()"><a
+                            class="nav-link py-3 px-0 px-lg-3 rounded " href="#contact">Contact</a></li-->
                 </ul>
             </div>
         </div>
@@ -34,17 +34,17 @@
     <section class="page-section featured-services" id="service">
         <app-service></app-service>
     </section>
-    <!-- Portfolio Section>
-    <section class="page-section portfolio" id="portfolio">
-        <app-portfolio></app-portfolio>
-    </section-->
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="about">
         <app-about></app-about>
     </section>
-    <!-- Contact Section-->
+    <!-- Contact Section>
     <section class="page-section" id="contact">
         <app-contact></app-contact>
+    </section-->
+    <!-- Portfolio Section -->
+    <section class="page-section portfolio" id="portfolio">
+        <app-portfolio></app-portfolio>
     </section>
     <!-- Footer-->
     <footer class="footer text-center">
